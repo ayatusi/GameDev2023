@@ -6,10 +6,10 @@
 
 <o1> Orders list of favourite foods
   <li> 1. Sushi
-    <li> 2. ...
-      <li> 3. ...
-        <li> 4. ...
-          <li> 5. ...
+    <li> 2. Pizza
+      <li> 3. Fettuchini Alfredo
+        <li> 4. Cinnamon Bun
+          <li> 5. Lasagna
 </o1>
 
 <u1> Unordered list of Countries
@@ -26,3 +26,21 @@
 
 <table border=1>
   <tr><td>A</td><td>B</td></tr>
+  <tr><td>1</td><td>2</td></tr>
+</table><br>
+
+<b>Assignment</b> Make a 3 x 4 table,
+then make a link and image with border = 0<br><br><br>
+
+<h2>Advanced</h2>
+
+Load an image and get it to move 10 pixels to the left using the button below<br>
+
+<image id="myImage01" src="" style="position:relative; left:0; top:0; width:50; height:50; "><br>
+  
+<input type=button value="Go left" onclick="{
+                                            document.getElementById('myImage01').style.left = '200px'
+                                            document.getElementById('myDiv01').innerHTML = 'It went left'
+                                            }">
+  
+  <div id="myDiv01'>...</div>
