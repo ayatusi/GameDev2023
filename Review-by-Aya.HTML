@@ -63,6 +63,10 @@ Loop this many times <input type="number" id="myTextLoop" value="10" size="10">
 
 <div id='myDiv125'>...</div><br>
   
+<b>"if statements" make decisions.
+if (x==4){ print something }
+Note: The last complex if statement may not correctly show the && = AND
+  || = OR != NOT EQUAL</b><br>
 Change the number <input type="number" id="myTextIf" value="4" size="10">     
     
 <input id="myButton126" type="button" value="If Statements" onclick="{
@@ -115,6 +119,7 @@ Change the number <input type="number" id="myTextIf" value="4" size="10">
 
 <div id='myDiv126'>...</div><br>
   
+  <b>Arrays store lots of variables with an index number</b><br>
 Store these numbers in an array <input type="text" id="myTextArray" value="3, 7, 9" size="10">        
     
 <input id="myButton127" type="button" value="Store and show array" onclick="{
@@ -131,6 +136,7 @@ Store these numbers in an array <input type="text" id="myTextArray" value="3, 7,
 
 <div id='myDiv127'>...</div><br>
   
+  <b>Objects store variables with a named index. Try changing them</b><br>
 Store these Items in a Javascript object <br>
     <textarea id="myTextAreaObject" rows="8" cols="70" wrap="false">{
    "firstName": "John",
@@ -152,6 +158,7 @@ Store these Items in a Javascript object <br>
 
 <div id='myDiv128'>...</div><br>
   
+  <b>Functions are the main way to make repeatable code</b><br>
 <input id="myButton129" type="button" value="Make and use a function" onclick="{
 
 function myFun(myVar){
@@ -165,7 +172,12 @@ myFun('28')      // This activates the function
 
 <div id='myDiv129'>...</div><br>
   
-<input id="myButton130" type="button" value="Make and Show the class myAnimal" onclick="{
+<b>Classes are everything put together.
+Functions inside a class are called "methods"
+Variables inside a class are called "properties"
+If statements, for loops, arrays, objects are all allowed inside a class
+  Classes can be extended, so you can add your own functionality to them</b><br>
+ <input id="myButton130" type="button" value="Make and Show the class myAnimal" onclick="{
                                                                                  
  class myAnimal {
     constructor(passName, passAge) {
@@ -187,6 +199,7 @@ myFun('28')      // This activates the function
 
 <div id='myDiv130'>...</div><br>
   
+  <b>Here we extend the class myAnimal to myCat</b><br>
 <input id="myButton131" type="button" value="Extend a class" onclick="{
 class myAnimal {
     constructor(passName, passAge) {
