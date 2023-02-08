@@ -50,7 +50,6 @@ Beef:<input type=checkbox><br>
   Hidden:<input type=hidden><br>
   File:<input type=file><br>
   Reset:<input type=reset><br>
-  Submit (advanced)<input type=submit><br>
   
   Button: <input type=button value="click" onclick="{
     document.getElementById('myArea01').value = 'Cool'
@@ -64,4 +63,12 @@ Beef:<input type=checkbox><br>
       <option value='myTwo'>Two
         <option value='myThree'>Three
   </select>
+</form>
+  
+  Submit <form action="/action_page.php">
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname" value="John"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  <input type="submit" value="Submit">
 </form>
