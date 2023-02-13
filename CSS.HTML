@@ -24,12 +24,31 @@ Properly done with a .css file listing all css commands for your website<br>
 Another way to do CSS (Cascading Style Sheets: determine colors 
 locations extra effects on the tags on your web page)<br>
 <br>
-Here is typical in document style
-<pre>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: mymove 5s infinite;
+}
 
+@keyframes mymove {
+  from {top: 0px;}
+  to {top: 200px;}
+}
+</style>
+</head>
+<body>
 
-  <br>
-</pre><br>
+<h4>The @keyframes Rule</h4>
+
+<div></div>
+
+</body>
+</html>
 <br>
 <b>This is bold</b><br>
 <b id="myB1" style ="color:#00ff00; background-Color:blue; "> This is bold<b>
