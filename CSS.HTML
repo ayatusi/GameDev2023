@@ -64,7 +64,7 @@ h1 {
 <html>
 <head>
 <style> 
-div1 {
+div {
   width: 100px;
   height: 100px;
   background: red;
@@ -83,37 +83,9 @@ div1 {
 <h1>The animation Property</h1>
 
 <p>Move an element from 0px to 200px left. The animation lasts for 5 seconds. It then starts over again, and go on forever (infinite).</p>
-<div1></div1>
+<div></div>
 
 </body>
 </html>
    <br>
    
-<html>
-<head>
-<style> 
-div2 {
-  width: 100px;
-  height: 100px;
-  background: red;
-  position: relative;
-  animation: mymove 3s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes mymove {
-  from {top: 0px;}
-  to {top: 200px; background-color: blue;}
-}
-</style>
-</head>
-<body>
-
-<h1>animation-fill-mode: forwards</h1>
-
-<p>Let the div element retain the style values from the last keyframe when the animation ends:</p>
-
-<div2></div2>
-
-</body>
-</html> <br>
