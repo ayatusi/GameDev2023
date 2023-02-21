@@ -10,8 +10,7 @@ Version 0.1.2
 let myIn01 = document.getElementbyId('myNum01').value
 document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = ' + myIn01*myIn01
 </pre>
-
-<h4> Example working code</h4>
+<br>
 
 <input id="myNum01" type="number" value="4" ><br>
 
@@ -28,13 +27,45 @@ document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = ' + myIn01*m
 <html>
 <body>
 
-<p id="demo1" onclick="myFunction()"><b>Click Me</b></p>
+<p id="click" onclick="myFunction()"><b>Click Me</b></p>
 
 <script>
 function myFunction() { 
-  document.getElementById("demo1").innerHTML = "I have changed!";
+  document.getElementById("click").innerHTML = "I have changed!";
+}
+</script>
+</body>
+</html>
+
+<br>
+<html>
+<body>
+
+<p id="myP">   This element has extra spacing   and contains <span>a span element</span>.</p>
+
+<button onclick="getinnerHTML()">Get innerHTML</button>
+<button onclick="getinnerText()">Get innerText</button>
+<button onclick="gettextContent()">Get textContent</button>
+
+<pre id="demo"></pre>
+
+<script>
+function getinnerText() {
+  let text = document.getElementById("myP").innerText;
+  document.getElementById("demo").innerText = text;
+}
+
+function getinnerHTML() {
+  let text = document.getElementById("myP").innerHTML;
+  document.getElementById("demo").innerText = text;
+}
+
+function gettextContent() {
+  let text = document.getElementById("myP").textContent;
+  document.getElementById("demo").innerText = text;
 }
 </script>
 
 </body>
-</html> <br>
+</html><br>
+
