@@ -69,3 +69,32 @@ function gettextContent() {
 </body>
 </html><br>
 
+<html>
+<body>
+<p><a id="myAnchor" target="_blank" href="https://www.google.com/?safe=active&ssui=on">GOOGLE</a></p>
+<button onclick="myFunction1()">Change the link</button>
+<script>
+function myFunction1() {
+  const element = document.getElementById("myAnchor");
+  element.innerHTML = "YOUTUBE";
+  element.href = "https://www.youtube.com/";
+}
+</script>
+</body>
+</html><br> 
+<br>
+<br>
+
+<html>
+<body>
+<script>
+function myFunction2() {
+  const element = document.getElementById("demotwo");
+  element.innerHTML += element.innerHTML;
+}
+</script>
+<button onclick="myFunction2()">Try it</button>
+<p id="demotwo">Click the button double this text.</p>
+</body>
+</html> 
+
