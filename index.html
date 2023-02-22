@@ -1,195 +1,25 @@
-Version 0.1.2
-<title> Input Output by Aya</title>
-<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Input Output by Aya</font></h1></p>
+<h5> Version 0.0.3</h5>
 
-  <h3> <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input output
-  Javascript innerHTML value</a></h3><hr><br>
-<h3><u>Example input output code</h3></u>
-<pre>
-let myIn01 = document.getElementbyId('myNum01').value
-document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = ' + myIn01*myIn01
-</pre><hr>
-<br>
-
-<input id="myNum01" type="number" value="4" ><br>
-
-<input type="button" value="ENTER" onclick="{
-    let myIn01 = parseFloat(document.getElementById('myNum01').value)
-    let myAnswer = myIn01 * myIn01
-    document.getElementById('myDiv01').innerHTML =
-    myIn01 + ' squared = ' + myAnswer
-}"><br>
-
-<div id="myDiv01">...</div> <br>
-
-<hr>
-<html>
-<body>
-
-<p id="click" onclick="myFunction()"><b>Click Me</b></p>
-
-<script>
-function myFunction() { 
-  document.getElementById("click").innerHTML = "I have changed!";
-}
-</script>
-</body>
-</html>
-<hr><br>
-<html>
-<body>
-
-<p id="myP">   This element has extra spacing   and contains <span>a span element</span>.</p>
-
-<button onclick="getinnerHTML()">Get innerHTML</button>
-<button onclick="getinnerText()">Get innerText</button>
-<button onclick="gettextContent()">Get textContent</button>
-
-<pre id="demo"></pre>
-
-<script>
-function getinnerText() {
-  let text = document.getElementById("myP").innerText;
-  document.getElementById("demo").innerText = text;
-}
-
-function getinnerHTML() {
-  let text = document.getElementById("myP").innerHTML;
-  document.getElementById("demo").innerText = text;
-}
-
-function gettextContent() {
-  let text = document.getElementById("myP").textContent;
-  document.getElementById("demo").innerText = text;
-}
-</script>
-</body>
-</html><br>
-<hr>
-<html>
-<body>
-<p><a id="myAnchor" target="_blank" href="https://www.google.com/?safe=active&ssui=on">GOOGLE</a></p>
-<button onclick="myFunction1()">Change the link</button>
-<script>
-function myFunction1() {
-  const element = document.getElementById("myAnchor");
-  element.innerHTML = "YOUTUBE";
-  element.href = "https://www.youtube.com/";
-}
-</script>
-</body>
-</html><br>
-<hr> 
-<br>
-<br>
-<html>
-<body>
-<script>
-function myFunction2() {
-  const element = document.getElementById("demotwo");
-  element.innerHTML += element.innerHTML;
-}
-</script>
-<button onclick="myFunction2()">Try it</button>
-<p id="demotwo">Click the button double this text. </p>
-</body>
-</html> 
-<br>
-<hr>
-<html>
-<body>
-<button onclick="myFunction3()">Move</button>
-<p>click "Move" to move the red span before the header</p>
-
-<span id="mySpan" style="color:red">MOVE ME DOWN</span>
-<h2 id="myH1">MOVE ME UP</h2>
-
-<script>
-function myFunction3() {
-  const span = document.getElementById("mySpan");
-  const h2 = document.getElementById("myH1");
-  h2.insertAdjacentElement("afterend", span);
-}
-</script>
-</body>
-</html>
-<hr>
-<html>
-<body>
-
-<button onclick="myFunction4()">Insert</button>
-<p>Click "Insert" to insert more text. </p>
-
-<h2 id="myH2"></h2>
-
-<script>
-function myFunction4() {
-  const h2 = document.getElementById("myH2");
-  let html = "<h3><p><b>meow</h3></p></b>";
-  h2.insertAdjacentHTML("afterend", html);
-}
-</script>
-
-</body>
-</html>
-<hr>
-<br>
-<html>
-<body>
-
-<ul id="myList1">
-  <li>Coffee</li>
-</ul>
-<ul id="myList2">
-  <li>Water</li>
-  <li>Tea</li>
-  <li>Iced Tea</li>
-  <li>Milkshake</li>
-  <li>Lemonade</li>
-  <li>Soda</li>
-  <li>Milk</li>
-  <li>Juice</li>
-</ul>
-
-<p><b>Click the button to move items from one list to another:</p></b>
-
-<button onclick="myFunction5()">Try it</button>
-
-<script>
-function myFunction5() {
-  const node = document.getElementById("myList2").lastElementChild;
-  const list = document.getElementById("myList1");
-  list.insertBefore(node, null);
-}
-</script>
-
-</body>
-</html>
-<hr>
-<html>
-<body>
-
-<p id="myP" contenteditable="true">CHANGE ME</p>
-<p id="demothree"></p>
-
-<script>
-let answer = document.getElementById("myP").isContentEditable;
-let text = "<b> Change the text above</b>"
-
-if (answer == true) {
-  text = "myP is editable. Try to change the text."
-}
-document.getElementById("demothree").innerHTML = text;
-</script>
-
-</body>
-</html>
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Index for Game Dev by Aya</font><h1></p></font>
+  
+  
+<li><a href="https://github.com/ayatusi/GameDev2023">A1 My Github Repository Full URL</a>
+<li><a href="...">A2 My Game Dev Website Full URL</a>
+<li><a href="https://github.com/hpssjellis/high-school-javascript-game-dev-assignment-images#t1a08-loops-by-fredhtml">A3 My Game Dev Assignment Images</a>
 <hr>
 
-<head>
-  <style>
-    body {
-      background-color: #b3b3cc;
-    }
-  </style>
-</head> 
+<h3 The following only need the exact file name</h3>
+<li><a href="Website.HTML">B1 Aya's Basic Website</a>
+<li><a href="Lists-and-Tables.HTML">B2 Lists and Tables by Aya</a>
+<li><a href="Review-by-Aya.HTML">B3 Review by Aya</a>
+<li><a href="Forms-by-Aya.HTML">B4 Forms by Aya</a>
+<li><a href="CSS.HTML">B5 CSS by Aya</a>
+<li><a href="input-output.HTML">B6 Input Output by Aya</a>
+
+  <head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head> 
