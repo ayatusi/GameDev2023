@@ -25,28 +25,18 @@ document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = ' + myIn01*m
 <hr>
 <html>
 <body>
-
-<p id="click" onclick="myFunction()"><b>Click Me</b></p>
-
 <script>
 function myFunction() { 
   document.getElementById("click").innerHTML = "I have changed!";
 }
 </script>
+<p id="click" onclick="myFunction()"><b>Click Me</b></p>
+
 </body>
 </html>
 <hr><br>
 <html>
 <body>
-
-<p id="myP">   This element has extra spacing   and contains <span>a span element</span>.</p>
-
-<button onclick="getinnerHTML()">Get innerHTML</button>
-<button onclick="getinnerText()">Get innerText</button>
-<button onclick="gettextContent()">Get textContent</button>
-
-<pre id="demo"></pre>
-
 <script>
 function getinnerText() {
   let text = document.getElementById("myP").innerText;
@@ -63,20 +53,30 @@ function gettextContent() {
   document.getElementById("demo").innerText = text;
 }
 </script>
+  
+<p id="myP">   This element has extra spacing   and contains <span>a span element</span>.</p>
+
+<button onclick="getinnerHTML()">Get innerHTML</button>
+<button onclick="getinnerText()">Get innerText</button>
+<button onclick="gettextContent()">Get textContent</button>
+
+<pre id="demo"></pre>
+
 </body>
 </html><br>
 <hr>
 <html>
 <body>
-<p><a id="myAnchor" target="_blank" href="https://www.google.com/?safe=active&ssui=on">GOOGLE</a></p>
-<button onclick="myFunction1()">Change the link</button>
-<script>
+  <script>
 function myFunction1() {
   const element = document.getElementById("myAnchor");
   element.innerHTML = "YOUTUBE";
   element.href = "https://www.youtube.com/";
 }
 </script>
+<p><a id="myAnchor" target="_blank" href="https://www.google.com/?safe=active&ssui=on">GOOGLE</a></p>
+<button onclick="myFunction1()">Change the link</button>
+
 </body>
 </html><br>
 <hr> 
@@ -98,30 +98,24 @@ function myFunction2() {
 <hr>
 <html>
 <body>
-<button onclick="myFunction3()">Move</button>
-<p>click "Move" to move the red span before the header</p>
-
-<span id="mySpan" style="color:red">MOVE ME DOWN</span>
-<h2 id="myH1">MOVE ME UP</h2>
-
-<script>
+  <script>
 function myFunction3() {
   const span = document.getElementById("mySpan");
   const h2 = document.getElementById("myH1");
   h2.insertAdjacentElement("afterend", span);
 }
 </script>
+<button onclick="myFunction3()">Move</button>
+<p>click "Move" to move the red span before the header</p>
+
+<span id="mySpan" style="color:red">MOVE ME DOWN</span>
+<h2 id="myH1">MOVE ME UP</h2>
+
 </body>
 </html>
 <hr>
 <html>
 <body>
-
-<button onclick="myFunction4()">Insert</button>
-<p>Click "Insert" to insert more text. </p>
-
-<h2 id="myH2"></h2>
-
 <script>
 function myFunction4() {
   const h2 = document.getElementById("myH2");
@@ -129,6 +123,12 @@ function myFunction4() {
   h2.insertAdjacentHTML("afterend", html);
 }
 </script>
+<button onclick="myFunction4()">Insert</button>
+<p>Click "Insert" to insert more text. </p>
+
+<h2 id="myH2"></h2>
+
+
 
 </body>
 </html>
@@ -136,7 +136,14 @@ function myFunction4() {
 <br>
 <html>
 <body>
-
+<script>
+function myFunction5() {
+  const node = document.getElementById("myList2").lastElementChild;
+  const list = document.getElementById("myList1");
+  list.insertBefore(node, null);
+}
+</script>
+  
 <ul id="myList1">
   <li>Coffee</li>
 </ul>
@@ -155,23 +162,11 @@ function myFunction4() {
 
 <button onclick="myFunction5()">Try it</button>
 
-<script>
-function myFunction5() {
-  const node = document.getElementById("myList2").lastElementChild;
-  const list = document.getElementById("myList1");
-  list.insertBefore(node, null);
-}
-</script>
-
 </body>
 </html>
 <hr>
 <html>
 <body>
-
-<p id="myP" contenteditable="true">CHANGE ME</p>
-<p id="demothree"></p>
-
 <script>
 let answer = document.getElementById("myP").isContentEditable;
 let text = "<b> Change the text above</b>"
@@ -181,6 +176,9 @@ if (answer == true) {
 }
 document.getElementById("demothree").innerHTML = text;
 </script>
+
+<p id="myP" contenteditable="true">CHANGE ME</p>
+<p id="demothree"></p>
 
 </body>
 </html>
