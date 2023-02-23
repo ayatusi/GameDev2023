@@ -1,6 +1,13 @@
 Version 0.0.1
+<head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head>
 <title> Variables by Aya </title>
-<h2 align=center>Variables by Aya</h2>
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Variables by Aya</font></h1></p><br>
 
 <a href="https://www.w3schools.com/js/js_variables.asp">Good reference to Variables in Javascript and other languages</a><br>
 
@@ -14,7 +21,7 @@ For Global variables Mr. Ellis prefers to use document.myVarName
     let myIn01 = document.getElementById('myText01').value
     document.getElementById('myDiv01').innerHTML = myIn01
 </pre>
-
+<hr>
 <h4> Example working code</h4>
 
 <input id="myText01" type="text" value="The Dog "> <br>
@@ -22,10 +29,77 @@ For Global variables Mr. Ellis prefers to use document.myVarName
 <input type="button" value="Show Variable" onclick="{
     let myIn01 = document.getElementById('myText01').value
     document.getElementById('myDiv01').innerHTML = myIn01
-    }"><br>
+   }"><br>
 
 <input type=button value="Using no Variable" onclick="{
     document.getElementById('myDiv01').innerHTML =
     document.getElementById('myText01').value
-    }"><br>
-<div id="myDiv01">...</div>
+    }"> <br> 
+<div id="myDiv01">...</div> <br>
+<hr>
+
+<html>
+<body>
+<h3><u> javascript "var" example</u></h3>
+<p>x, y, and z are variables</p>
+var x = 12;<br>
+var y = 8;<br>
+var z = x + y;<br>
+<p><b>"var" can be replaced with either "let" or blank</b></p>
+
+<p id="var"></p>
+
+<script>
+var x = 12;
+var y = 8;
+var z = x + y;
+document.getElementById("var").innerHTML =
+"The value of z is: " + z;
+</script>
+
+</body>
+</html>
+<hr>
+<html>
+<body>
+
+<h3><u>javascript "const" example</u></h3>
+
+<p>price1, price2, and total are variables.</p>
+<b>const</b> price1 = 5;<br>
+<b>const</b> price2 = 6;<br>
+<b>let</b> total = price1 + price2;<br>
+
+<p id="const"></p>
+
+<script>
+const price1 = 5;
+const price2 = 6;
+let total = price1 + price2;
+document.getElementById("const").innerHTML =
+"The total is: " + total;
+</script>
+
+</body>
+</html>
+<hr>
+<h3><u>creating a variable, assigning a value to it then displaying it</u></h3>
+<h4>example code:</h4>
+let carName = "Ferrari";<br>
+document.getElementById("car").innerHTML = carName;
+
+<html>
+<body>
+<h4>working code:</h4>
+
+<p id="car"></p>
+
+<script>
+let carName = "Ferrari";
+document.getElementById("car").innerHTML = carName;
+</script>
+
+</body>
+</html>
+<hr>
+
