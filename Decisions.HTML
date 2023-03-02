@@ -1,6 +1,14 @@
 Version 0.0.1
+<title> Decisions by Aya</title>
+<head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head>
 
-<h2 align=center>Decisions by Aya</h2>
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Decisions by Aya </font></p></h1>
 
 <a href="https://www.w3schools.com/js/js_if_else.asp">Good reference to Decisions if ... else statements Javascript innerHTML value by Fred</a><br>
 Note: ! = Not, && = AND, || = OR 
@@ -19,7 +27,7 @@ Note: ! = Not, && = AND, || = OR
 
 <input type="button" value="Simple if Statement for Decision Making" onclick="{
     let myIn01 = parseFloat(document.getElementById('myNum01').value)
-    if (myIn01 >= 3{
+    if (myIn01 >= 3){
     document.getElementById('myDiv01').innerHTML = myIn01 + ' is greater than 3'
     }
     }">
@@ -27,17 +35,33 @@ Note: ! = Not, && = AND, || = OR
 <input type="button" value="if...else" onclick="{
     let myIn01 = parseFloat(document.getElementById('myNum01').value)
     if (myIn01 >= 3){
-    document.getElementById('myDiv01').innerHTML = myIn01 + 'is greater than 3'
+    document.getElementById('myDiv01').innerHTML = myIn01 + ' is greater than 3'
     } else {
-    document.getElementById('myDiv01').innerHTML = myIn01 + ' is less than 3'}
-    }">
+    document.getElementById('myDiv01').innerHTML = myIn01 + ' is less than 3'
+    }
+   }">
 
-<input type="button" value="Complex if" onlick="{
+<input type="button" value="Complex if" onclick="{
     let myIn01 = parseFloat(document.getElementById('myNum01').value)
     if ((myIn01 != 3 || myIn01 > -3) && myIn01 <=100 ){
-        document.getElementById('myDiv01').innerHTML = myIn01 + ' is complex'
+    document.getElementById('myDiv01').innerHTML = myIn01 + 'is complex'
     } else {
-        document.getElementById('myDiv01').innerHTML = myIn01 + ' is not complex'}
-    }">
+    document.getElementById('myDiv01').innerHTML = myIn01 + 'is not complex'
+    } }">
+
 
 <div id="myDiv01">...</div>
+<hr>
+
+<h4> Enter date of time.</h4>
+
+<input id="myHour" type="time" value="..."> <br>
+
+<input type="button" value="Get a Greeting!" onclick="{
+    let myHour01 = parseFloat(document.getElementById('myHour').value)
+    if (myHour01 < 11){ 
+    document.getElementById('myDiv02').innerHTML = 'good morning'
+    } else {
+    document.getElementById('myDiv02').innerHTML = 'good day'
+    } }">
+<div id="myDiv02">...</div>
