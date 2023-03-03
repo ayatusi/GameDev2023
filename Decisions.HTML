@@ -65,3 +65,25 @@ Note: ! = Not, && = AND, || = OR
     document.getElementById('myDiv02').innerHTML = 'good day'
     } }">
 <div id="myDiv02">...</div>
+<hr>
+
+<h4> What color is the ocean?</h4>
+<input type="radio" id="Red" name="color" value="Red">
+<b><label for="Red" style="color: #8B0000">Red</label><br></b>
+
+<input type="radio" id="Green" name="color" value="Green">
+<b><label for="Green" style="color: #006400">Green</label><br></b>
+
+<input type="radio" id="Blue" name="color" value="Blue">
+<b><label for="Blue" style="color: #00008B">Blue</label><br></b>
+
+<input type="button" value="submit" onclick="{
+  let color = document.getElementById('Blue').checked
+  if (color == true){
+    document.getElementById('myDiv03').innerHTML = 'Correct'
+   } else {
+    document.getElementById('myDiv03').innerHTML = 'Wrong'
+  } }">
+<div id="myDiv03">...</div>
+<hr>
+
