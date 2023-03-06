@@ -59,10 +59,12 @@ Note: ! = Not, && = AND, || = OR
 
 <input type="button" value="Get a Greeting!" onclick="{
     let myHour01 = parseFloat(document.getElementById('myHour').value)
-    if (myHour01 < 11){ 
+    if (myHour01 < 12 > 0){ 
     document.getElementById('myDiv02').innerHTML = 'good morning'
+    } else if (myHour01 > 12 > 20){
+    document.getElementById('myDiv02').innerHTML = 'good evening'
     } else {
-    document.getElementById('myDiv02').innerHTML = 'good day'
+    document.getElementById('myDiv02').innerHTML = 'good night'
     } }">
 <div id="myDiv02">...</div>
 <hr>
@@ -85,5 +87,31 @@ Note: ! = Not, && = AND, || = OR
     document.getElementById('myDiv03').innerHTML = 'Wrong'
   } }">
 <div id="myDiv03">...</div>
+<hr>
+<h4> What number(s) are less than 5 but more than 2? </h4> 
+
+<input type="checkbox" id="one" name="num" value="one">
+<b>1</b></br>
+
+<input type="checkbox" id="two" name="num" value="two">
+<b>2</b></br>
+
+<input type="checkbox" id="three" name="num" value="three">
+<b>3</b></br>
+
+<input type="checkbox" id="four" name="num" value="four">
+<b>4</b></br>
+
+<input type="checkbox" id="five" name="num" value="five">
+<b>5</b></br>
+
+<input type="button" value="Submit" onclick="{
+  let num = document.getElementById('four' && 'three').checked
+  if (num == true){
+  document.getElementById('myDiv04').innerHTML = 'Correct'
+  } else {
+  document.getElementById('myDiv04').innerHTML = 'Wrong'
+  } }">
+<div id="myDiv04">...</div>
 <hr>
 
