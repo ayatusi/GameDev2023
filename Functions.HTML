@@ -1,13 +1,3 @@
-<script>
-    function myExampleFunction(){
-        let myIn01 = parseInt(document.getElementById('myText01').value)
-        let mySum = myIn01 + myIn01
-        let myReply = myIn01 + ' + ' + myIn01 + ' = ' + mySum
-        return myReply
-
-    }
-</script>
-
 Version 0.01
 <title> Functions by Aya</title>
 <head>
@@ -31,8 +21,18 @@ Information can also be passed to functions (that's more advanced)
         return parseInt(document.getElementById('myText01').value)
     }
 </pre>
+<hr>
 
 <h4> Example working code</h4>
+<script>
+    function myExampleFunction(){
+        let myIn01 = parseInt(document.getElementById('myText01').value)
+        let mySum = myIn01 + myIn01
+        let myReply = myIn01 + ' + ' + myIn01 + ' = ' + mySum
+        return myReply
+
+    }
+</script>
 
 <input type="text" id="myText01" value="3"><br>
 
@@ -41,3 +41,93 @@ Information can also be passed to functions (that's more advanced)
     }">
 
 <div id="myDiv01">...</div>
+<hr>
+
+
+<h4> Converting Fahrenheit to Celsius</h4>
+
+<script>
+    function myCelFunction(){
+        let myIn02 = parseInt(document.getElementById('myText02').value)
+        let mySum = (myIn02 - 32) * 5/9
+        let myReply = myIn02 + ' - ' + 32 + ' * ' + ' 5/9 ' + ' = ' + mySum
+        return myReply
+    
+    }
+</script>
+
+<input type="text" id="myText02" value="100"><br>
+
+<input type="button" value="Fahrenheit to Celsius" onclick="{
+    document.getElementById('myDiv02').innerHTML = myCelFunction()
+    }">
+
+<div id="myDiv02">...</div>
+<hr>
+
+<h4> Converting Celsius to Fahrenheit</h4>
+
+<script>
+    function myFahFunction(){
+        let myIn = parseInt(document.getElementById('myTextf').value)
+        let mySum = (myIn * 9/5) + 32 
+        let myReply = myIn + ' x ' + ' 9/5 ' + ' + ' +  32 + ' = ' + mySum
+        return myReply
+    
+    }
+</script>
+
+<input type="text" id="myTextf" value="10"><br>
+
+<input type="button" value="Celsius to Fahrenheit" onclick="{
+    document.getElementById('myDiv12').innerHTML = myFahFunction()
+    }">
+
+<div id="myDiv12">...</div>
+<hr>
+
+<h4> Dividing Two Numbers </h4>
+
+<script>
+    function myDivFunction(){
+        let x = parseInt(document.getElementById('myText03').value)
+        let y = parseInt(document.getElementById('myText04').value)
+        let mySum = x / y
+        let myReply = x + ' / ' + y + ' = ' + mySum
+        return myReply
+
+    }
+</script>
+
+<input type="text" id="myText03" value=""><br>
+<input type="text" id="myText04" value=""><br>
+
+<input type="button" value="Dividing" onclick="{
+    document.getElementById('myDiv03').innerHTML = myDivFunction()
+    }">
+
+<div id="myDiv03">...</div>
+<hr>
+
+<h4> Multiplying Two Numbers </h4>
+
+<script>
+    function myMultFunction(){
+        let x = parseInt(document.getElementById('myText05').value)
+        let y = parseInt(document.getElementById('myText06').value)
+        let mySum = x * y
+        let myReply = x + ' x ' + y + ' = ' + mySum
+        return myReply
+
+    }
+</script>
+
+<input type="text" id="myText05" value=""><br>
+<input type="text" id="myText06" value=""><br>
+
+<input type="button" value="Dividing" onclick="{
+    document.getElementById('myDiv04').innerHTML = myMultFunction()
+    }">
+
+<div id="myDiv04">...</div>
+<hr>
