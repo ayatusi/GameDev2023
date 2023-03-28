@@ -1,7 +1,9 @@
-<html>
+
+ <html>
   <head>
      <script type="module">
-      import { HfInference } from 'https://cdn.skypack.dev/@huggingface/inference@1.5.2';
+     // import { HfInference } from 'https://cdn.skypack.dev/@huggingface/inference@1.5.2';
+      import { HfInference } from 'https://cdn.skypack.dev/@huggingface/inference@1.6.0';
       document.HfInference = HfInference   // bad coding but I need HfInference to be global
      </script>
     
@@ -10,33 +12,84 @@
         let hf = new document.HfInference(mySentToken)
         document.myHf = hf  // let this be global, also kind of bad programming
 
-        const objectDetectionRes = await hf.textGeneration({
+        const objectDetectionRes = await hf.textToImage({
            model: mySentModel,
-           inputs: mySentData
-        })
+           inputs: mySentData,
+           negative_prompt: 'blurry'
+        }) 
+	
+
+       // const myImgBlob = await objectDetectionRes.blob();
+	
+	
+	
+
+      //  const tab = window.open((target = "_blank"));
+      //  tab.location.href = await window.URL.createObjectURL(myNext);
+
         
         
-       /*
-       
-const objectDetectionRes = await hf.textGeneration({
-  model: 'gpt2',
-  inputs: 'The answer to the universe is'
-})
-       
-       */
+        
+             
+        /*
+const objectDetectionRes = await hf.textToImage({
+  inputs: 'award winning high resolution photo of a giant tortoise/((ladybird)) hybrid, [trending on artstation]',
+  negative_prompt: 'blurry',
+  model: 'stabilityai/stable-diffusion-2',
+  
+  //768 x 768
+})   
+      
+      */   
         
         
         
         
         
         console.log('objectDetectionRes')
-        console.log(objectDetectionRes)   //generated_text
+        console.log(objectDetectionRes)
+	     
+	     
+	  const canvas = document.getElementById("myCanvas");
+          const ctx = canvas.getContext("2d");
+          const myImg = new Image();
+          myImg.onload = function() {
+            canvas.width = myImg.width;
+            canvas.height = myImg.height;
+            ctx.drawImage(myImg, 0, 0);
+          };
+          myImg.src = URL.createObjectURL(objectDetectionRes);     
+	     
+	  console.log('myImg.src')   
+	  console.log(myImg.src)   
+	     
+	     
+	     
+	     
+	     
+	     
+	     
+      // const myBlobURL = URL.createObjectURL(objectDetectionRes)
+	     
+	//console.log('myBlobURL')     
+	//console.log(myBlobURL)     
+       
+      //  document.myObjDetect = objectDetectionRes   // make it global
+        document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes) 
+      
+    //  let UAC = new Uint8ClampedArray( objectDetectionRes, 768, 768);
+    //  let myImageData = new ImageData(myBlobURL, 768, 768);
 
-       console.log('objectDetectionRes.generated_text')
-       console.log(objectDetectionRes.generated_text)
-        document.myObjDetect = objectDetectionRes   // make it global
-       // document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes) 
-        document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes.generated_text, 
+		    // Get a reference to the canvas and its context
+	   //	let canvas = document.getElementById('myCanvas');
+	    //	let context = canvas.getContext('2d');
+
+		// Draw the image data onto the canvas
+	    //	context.putImageData(myImageData, 0, 0);
+	   // 	context.putImageData(myImgBlob, 0, 0);
+      /*
+      
+        document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes, 
                  function (key, value) {
                      if (key == "}") {
                         return "<br>";
@@ -44,6 +97,9 @@ const objectDetectionRes = await hf.textGeneration({
                         return value;
                      }
                   })
+      
+      
+      */
        
      }  
       
@@ -60,7 +116,7 @@ const objectDetectionRes = await hf.textGeneration({
 version 0.7.0-61<br>
   <h2 align=center> Testing HuggingFaceJS</h2>
 Output in the div below. Works without personal token just stops after about 20 loads or refreshes per hour<br>
-  
+<canvas id="myCanvas" width="768" height="768"></canvas> <br>
 Note: Delete and save a blank token to return to the regular rate.<br><br>  
 <input id="myEnteredToken" type=password size=30>
 <input type="button" value="Store Token Locally" onClick="{
@@ -69,14 +125,14 @@ Note: Delete and save a blank token to return to the regular rate.<br><br>
        document.getElementById('myEnteredToken').value.slice(-4)
 }"><br><br>
   
-Load this string of text and see the text generation possibilities<br> 
+Load this string of text to generate an image<br> 
   
-<input id="myDataOrImage" type=text value="The answer to the universe is" size=100  placeholder="The answer to the universe is" ><br>
+<input id="myDataOrImage" type=text value="award winning high resolution photo of a giant tortoise/((ladybird)) hybrid, [trending on artstation]" size=100  placeholder="award winning high resolution photo of a giant tortoise/((ladybird)) hybrid, [trending on artstation]" ><br>
                                          
-<a href="https://huggingface.co/models">HuggingFace Model Hub</a> label of the model to use: <input id="myModel" type=text value="gpt2" placeholder="gpt2">  
+<a href="https://huggingface.co/models">HuggingFace Model Hub</a> label of the model to use: <input id="myModel" type=text value="stabilityai/stable-diffusion-2" placeholder="stabilityai/stable-diffusion-2">  
   
    
-<input type=button value="LOAD Text and Test Model" onclick="{
+<input type=button value="LOAD Text and Test Model"onclick="{
     document.getElementById('myDiv01').innerHTML = ''
     myHugginFaceLoad(document.getElementById('myEnteredToken').value,document.getElementById('myDataOrImage').value,document.getElementById('myModel').value ) 
                                                        
