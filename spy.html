@@ -1,0 +1,34 @@
+<title> Spy by Aya</title>
+<head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head> 
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Spy by Aya</font></p></h1><h1>
+<textarea id="myArea01" rows=4 cols=70>Hello how are you</textarea><br> 
+
+
+<input type=button value="encrypt" onclick="{
+   let myTemp = ''
+   myString = document.getElementById('myArea01').value.toLowerCase().split('')
+   for (let myLoop=0;   myLoop < myString.length; myLoop++){
+      myTemp = myString[myLoop]
+      if (myString[myLoop] == 'e') {myTemp  = 'f'} 
+      if (myString[myLoop] == 'h') {myTemp  = 'i'} 
+      myString[myLoop] = myTemp
+   }
+   document.getElementById('myArea02').value = myString.join('')
+}"><br><br>
+
+
+
+<textarea id="myArea02" rows=4 cols=70></textarea><br> 
+
+<input type=button value="decrypt" onclick="{
+   alert('Sorry, you have to do this!')
+}"><br><br>
+
+
+<textarea id="myArea03" rows=4 cols=70></textarea><br> 
