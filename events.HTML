@@ -1,7 +1,13 @@
 Version 0.0.1
-
-<h2 align=center>Events by Aya</h2>
-
+<title>Events by Aya</title>
+<head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head> 
+  <h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Index for Game Dev by Aya</font></p></h1>
 <a href="https://way2tutorial.com/html/html5_events_handler_list.php">Good reference to HTML Events</a><br>
 
 Events are HTML code that activates Javascript code
@@ -12,23 +18,108 @@ Events are HTML code that activates Javascript code
 alert('hi')
 }" &gt
 </pre>
+<hr>
+<h4><u>Example working code</u></h4>
 
-<h4> Example working code</h4>
+<input type="text" id="myText01" value="3"><br>
 
-<input type=text id="myText01" value="3"><br>
+<input type="button" value="Example onClick" onClick="{
+    document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value   
+}">
 
-<input type=button value="Example onClick" onClick="{
-                                                    document.getElementbyId('myDiv01').innerHTML = document.getElementById('myText01').value
-                                                    }">
 <div id="myDiv01">...</div>
+<hr>
 
+<h4><u>Example onDblClick</u></h4>
+<input type="text" id="myText02" value="3"><br>
+
+<input type="button" value="Example onDblClick" onDblClick="{
+    document.getElementById('myDiv02').innerHTML = document.getElementById('myText02').value   
+}">
+
+<div id="myDiv02">...</div>
+<hr>
+
+<h4><u>Example onMouseOut</u></h4>
 <b id="myB01" onMouseOut="{
-                          document.getElementById('myB01').innerHTML = 'This is bold'
-                          }" onMouseOver="{
-                                          document.getElementById('myB01').innerHTML = 'This is cool'
-                                          }"> This is bold</b>
-<br>
+    document.getElementById('myB01').innerHTML = 'This is bold'
+}" onMouseOver="{
+    document.getElementById('myB01').innerHTML = 'This is cool'
+}"> This is bold</b><br>
+<hr>
 
+<h4><U>Example mouseDown</U></h4>
+<p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
+    CLICK HERE
+    </p>
+<script>
+    function mouseDown() {
+      document.getElementById("p1").style.color = "purple";
+    }
+    
+    function mouseUp() {
+      document.getElementById("p1").style.color = "black";
+    }
+    </script>
+<hr>
+
+<h4><u>Example onMouseMove</u></h4>
+<img onmousemove="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif" alt="Smiley" width="65" height="65">
+
+<script>
+function bigImg(x) {
+  x.style.height = "100px";
+  x.style.width = "100px";
+}
+
+function normalImg(x) {
+  x.style.height = "65px";
+  x.style.width = "65px";
+}
+</script>
+<br>
+<hr>
+
+<h4><u>Example onDrag</u></h4>
+<style>
+    .droptarget {
+      float: left; 
+      width: 100px; 
+      height: 35px;
+      margin: 15px;
+      padding: 10px;
+      border: 2px solid #d9d6da;
+    }
+    </style>
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <img ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/American_football.svg/2048px-American_football.svg.png" alt="football" width="32" height="32">
+  </div>
+  
+  <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+  
+  <p style="clear:both;" id="demo"></p>
+  
+  <script>
+  function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+  }
+  
+  function dragging(event) {
+    document.getElementById("demo").innerHTML = "The football is being thrown";
+  }
+  
+  function allowDrop(event) {
+    event.preventDefault();
+  }
+  
+  function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "The football was dropped";
+  }
+  </script>
+  <hr>
 You do at least 8 other events:<br>
 onClick, onDbClick, onCharge, onBlue, onBlue, onFocus, onMouseMove, onTouch,
 onKeyDown, onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove
