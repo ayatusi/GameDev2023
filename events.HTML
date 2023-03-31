@@ -12,14 +12,14 @@ Version 0.0.1
 
 Events are HTML code that activates Javascript code
 
-<h4> Example Functions code</h4>
+<h3><u>Example Functions Code</u></h3>
 <pre>
 &lt input type=button value="Example onClick="{
 alert('hi')
 }" &gt
 </pre>
 <hr>
-<h4><u>Example working code</u></h4>
+<h3><u>Example Working Code</u></h3>
 
 <input type="text" id="myText01" value="3"><br>
 
@@ -30,7 +30,7 @@ alert('hi')
 <div id="myDiv01">...</div>
 <hr>
 
-<h4><u>Example onDblClick</u></h4>
+<h3><u>Example onDblClick</u></h3>
 <input type="text" id="myText02" value="3"><br>
 
 <input type="button" value="Example onDblClick" onDblClick="{
@@ -40,7 +40,7 @@ alert('hi')
 <div id="myDiv02">...</div>
 <hr>
 
-<h4><u>Example onMouseOut</u></h4>
+<h3><u>Example onMouseOut</u></h3>
 <b id="myB01" onMouseOut="{
     document.getElementById('myB01').innerHTML = 'This is bold'
 }" onMouseOver="{
@@ -48,7 +48,7 @@ alert('hi')
 }"> This is bold</b><br>
 <hr>
 
-<h4><U>Example mouseDown</U></h4>
+<h3><U>Example onMouseDown</U></h3>
 <p id="p1" onmousedown="mouseDown()" onmouseup="mouseUp()">
     CLICK HERE
     </p>
@@ -63,7 +63,7 @@ alert('hi')
     </script>
 <hr>
 
-<h4><u>Example onMouseMove</u></h4>
+<h3><u>Example onMouseMove</u></h3>
 <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" border="0" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif" alt="Smiley" width="65" height="65">
 
 <script>
@@ -80,7 +80,7 @@ function normalImg(x) {
 <br>
 <hr>
 
-<h4><u>Example onDrag</u></h4>
+<h3><u>Example onDrag</u></h3>
 <style>
     .droptarget {
       float: left; 
@@ -88,7 +88,7 @@ function normalImg(x) {
       height: 35px;
       margin: 15px;
       padding: 10px;
-      border: 2px solid #d9d6da;
+      border: 2px solid #000000;
     }
     </style>
 <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -118,8 +118,74 @@ function normalImg(x) {
     event.target.appendChild(document.getElementById(data));
     document.getElementById("demo").innerHTML = "The football was dropped";
   }
-  </script>
-  <hr>
-You do at least 8 other events:<br>
-onClick, onDbClick, onCharge, onBlue, onBlue, onFocus, onMouseMove, onTouch,
-onKeyDown, onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove
+  </script><br>
+<br>
+<hr>
+<h3><u>Example onChange</u></h3>
+<select id="mySelect" onchange="myonChange()">
+  <option value="Red">Red
+  <option value="Orange">Orange
+  <option value="Yellow">Yellow
+  <option value="Green">Green
+  <option value="Blue">Blue
+  <option value="Purple">Purple
+  <option value="Pink">Pink
+</select>
+
+<p id="change"></p>
+
+<script>
+function myonChange() {
+  var x = document.getElementById("mySelect").value;
+  document.getElementById("change").innerHTML = "Your favourite color is " + x;
+}
+</script>
+<hr>
+
+<h3><u>Example onInput</u></h3>
+<input type="text" id="myInput" oninput="myonInput()">
+
+<p id="input"></p>
+
+<script>
+function myonInput() {
+  var y = document.getElementById("myInput").value;
+  document.getElementById("input").innerHTML = y;
+}
+</script>
+<hr>
+<h3><u>Example onBlur</u></h3>
+Enter your name: <input type="text" name="fname" id="fname" onblur="myonBlur()"><br>
+When text is entered it will change all to uppercase
+
+<script>
+function myonBlur() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
+<hr>
+
+<h3><u>Example onCopy</u></h3>
+<input type="text" oncopy="myonCopy()" value="Try to copy this text">
+
+<p id="sdsd"></p>
+
+<script>
+function myonCopy() {
+  document.getElementById("sdsd").innerHTML = "You copied text!"
+}
+</script>
+<hr>
+
+<h3><u>Example onPaste</u></h3>
+<input type="text" onpaste="myonpaste()" value="Try to paste something in here" size="40">
+
+<p id="paste"></p>
+
+<script>
+function myonpaste() {
+  document.getElementById("paste").innerHTML = "You pasted text!";
+}
+</script>
+<hr>
