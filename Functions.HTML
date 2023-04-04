@@ -43,6 +43,28 @@ Information can also be passed to functions (that's more advanced)
 <div id="myDiv01">...</div>
 <hr>
 
+<h4> Adding Two Numbers </h4>
+
+<script>
+    function myAddFunction(){
+        let x = parseInt(document.getElementById('myNum01').value)
+        let y = parseInt(document.getElementById('myNum02').value)
+        let mySum = x + y
+        let myReply = x + ' + ' + y + ' = ' + mySum
+        return myReply
+
+    }
+</script>
+
+<input type="number" id="myNum01" value="1"><br>
+<input type="number" id="myNum02" value="1"><br>
+
+<input type="button" value="adding" onclick="{
+    document.getElementById('myDiv05').innerHTML = myAddFunction()
+}">
+<div id="myDiv05">...</div>
+<hr>
+
 
 <h4> Converting Fahrenheit to Celsius</h4>
 
@@ -56,7 +78,7 @@ Information can also be passed to functions (that's more advanced)
     }
 </script>
 
-<input type="text" id="myText02" value="100"><br>
+<input type="number" id="myText02" value="100"><br>
 
 <input type="button" value="Fahrenheit to Celsius" onclick="{
     document.getElementById('myDiv02').innerHTML = myCelFunction()
@@ -77,7 +99,7 @@ Information can also be passed to functions (that's more advanced)
     }
 </script>
 
-<input type="text" id="myTextf" value="10"><br>
+<input type="number" id="myTextf" value="10"><br>
 
 <input type="button" value="Celsius to Fahrenheit" onclick="{
     document.getElementById('myDiv12').innerHTML = myFahFunction()
@@ -99,8 +121,8 @@ Information can also be passed to functions (that's more advanced)
     }
 </script>
 
-<input type="text" id="myText03" value="10"><br>
-<input type="text" id="myText04" value="5"><br>
+<input type="number" id="myText03" value="10"><br>
+<input type="number" id="myText04" value="5"><br>
 
 <input type="button" value="Dividing" onclick="{
     document.getElementById('myDiv03').innerHTML = myDivFunction()
@@ -122,8 +144,8 @@ Information can also be passed to functions (that's more advanced)
     }
 </script>
 
-<input type="text" id="myText05" value="2"><br>
-<input type="text" id="myText06" value="5"><br>
+<input type="number" id="myText05" value="2"><br>
+<input type="number" id="myText06" value="5"><br>
 
 <input type="button" value="Dividing" onclick="{
     document.getElementById('myDiv04').innerHTML = myMultFunction()
