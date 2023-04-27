@@ -28,6 +28,35 @@ Version 0.0.1
 
     }
 </script>
+<script>
+    function myGrossFunction(){
+        let x = parseInt(document.getElementById('wage').value)
+        let y = parseInt(document.getElementById('hours').value)
+        let z = parseInt(document.getElementById('days').value)
+
+        let mySum = x * y
+        let myNext1 = mySum * z
+        let myNext2 = myNext1 * 12
+        let myReply = myNext2
+        return myReply
+    }
+</script>
+<script>
+    function myNetFunction(){
+        let x = parseInt(document.getElementById('wage').value)
+        let y = parseInt(document.getElementById('hours').value)
+        let z = parseInt(document.getElementById('days').value)
+        let t = parseInt(document.getElementById('tax').value)
+
+        let mySum = x * y
+        let myNext1 = mySum * z
+        let myNext2 = myNext1 * 12
+        let myNext3 = myNext2 / t
+        let myNext4 = myNext2 - myNext3
+        let myReply = myNext4
+        return myReply
+    }
+</script>
 
 
 <h4>Wage per hour</h4>
@@ -39,8 +68,15 @@ Version 0.0.1
 <h4>Tax %</h4>
 <input type="text" id="tax" value="30"><br>
 <br>
+
 <input type="button" value="calculate" onclick="{
-    document.getElementById('myDiv01').innerHTML = myTaxFunction()
+    document.getElementById('myDiv01').innerHTML = myGrossFunction()
+    document.getElementById('myDiv02').innerHTML = myTaxFunction()
+    document.getElementById('myDiv03').innerHTML = myNetFunction()
     }"> <br>
+<b>Gross Income</b><div id="myDiv01">...</div>
 <br>
-<div id="myDiv01">...</div><br>
+<b>Tax Owed</b><div id="myDiv02">...</div>
+<br>
+<b>Net Income</b><div id="myDiv03">...</div>
+
