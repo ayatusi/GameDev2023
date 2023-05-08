@@ -1,17 +1,5 @@
 
 <body id="myBody" style="background-repeat:repeat; background-size: 80%" background="background.jpg" 
-onload="{  clearInterval(myTimer02)
-   myTimer02 = setInterval(function(){
-      let my02x = Math.floor((Math.random() * 20) - 9) 
-      let my02y = Math.floor((Math.random() * 20) - 9) 
-      document.getElementById('myImg02').style.left = parseInt(document.getElementById('myImg02').style.left) + my02x + 'px'
-      document.getElementById('myImg02').style.top  = parseInt(document.getElementById('myImg02').style.top)  + my02y + 'px'
-      let my02m = Math.floor((Math.random() * 20) - 9)
-      let my02w = Math.floor((Math.random() * 20) - 9)
-      document.getElementById('myImg03').style.left = parseInt(document.getElementById('myImg03').style.left) + my02m + 'px'
-      document.getElementById('myImg03').style.top  = parseInt(document.getElementById('myImg03').style.top)  + my02w + 'px'
-      myCheckHit()     // checks for all collisions
-}, 50)}"  
    onkeydown="{
    if (event.key == 'd') {  // d = go right
      document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
@@ -62,10 +50,26 @@ onload="{  clearInterval(myTimer02)
     
     function myCheckHit(){
     
-       if ( myHitOther('myImg01','myImg02') ){
-           //alert('you lose')
-          document.getElementById('myImg01').style.left = '10px'
-       }   
+      var img1 = document.getElementById("myImg01");
+        var img2 = document.getElementById("myImg02");
+        var img1x = img1.offsetLeft;
+        var img1y = img1.offsetTop;
+        var img2x = img2.offsetLeft;
+        var img2y = img2.offsetTop;
+        var img1w = img1.offsetWidth;
+        var img1h = img1.offsetHeight;
+        var img2w = img2.offsetWidth;
+        var img2h = img2.offsetHeight;
+      
+        if (img1x < img2x + img2w &&
+            img1x + img1w > img2x &&
+            img1y < img2y + img2h &&
+            img1y + img1h > img2y) {
+          // Reset the position of img1
+          img1.style.left = "10px";
+        }
+      }
+      setInterval(myCheckHit, 10);
        
        if ( myHitOther('myImg01','myImg03') ){
            //alert('you lose')
@@ -102,7 +106,6 @@ onload="{  clearInterval(myTimer02)
          document.getElementById('myImg02').style.left = (window.innerWidth / 2) + 'px'
        }
     
-    }
     
     
     </script>
@@ -123,31 +126,36 @@ onload="{  clearInterval(myTimer02)
     
     
     
-    <img id="myImg01" src="main character.JPG"  style="position:absolute; width:100px; height:80px; left: 50px; top:190px;">
-    <style id="myImg02"> 
-      div {
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        position: relative;
-        animation-name: example;
-        animation-duration: 1s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;  
-      }
+    <img id="myImg01" src="main character.JPG"  style="position:absolute; width:85px; height:80px; left: 50px; top:190px;">
+
+
+    <html>
+      <head>
+      <style>
+        #myImg02 { 
+          width: 80px;
+          height: 80px;
+          background-color: red;
+          position: relative;
+          animation-name: example;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;  
+        }
       
-      @keyframes example {
-        0%   {background-color: red; left:100px; top:0px;}
-        100%  {background-color:red; left:100px; top:400px;}
-      }
+        @keyframes example {
+          0%   {background-color: red; left:200px; top:0px;}
+          100%  {background-color:red; left:200px; top:400px;}
+        }
       </style>
-      
-      
-      <div></div>
-      
+      </head>
+
+
+      <body>
+      <div id="myImg02"></div>
       </body>
       </html>
-    <img id="myImg03" src="bad guy.JPG"  style="position:absolute; width:100px; height:100px; left:450px; top:110px;">
+    <img id="myImg03" src="bad guy.JPG"  style="position:absolute; width:85px; height:80px; left:450px; top:110px;">
     <img id="myImg04" src="https://static.vecteezy.com/system/resources/previews/009/354/918/original/treasure-chest-clipart-design-illustration-free-png.png"  style="position:absolute; width:100px; height:80px; left:800px; top:400px;">
     <img id="myImg05" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" style="position:absolute; width:2000px; height:8px;  left:-0px; top:732px;">
     <img id="myImg06" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" style="position:absolute; width:2000px; height:8px;  left:-0px; top:0.5px;">
