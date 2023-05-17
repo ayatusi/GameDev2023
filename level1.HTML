@@ -17,37 +17,27 @@
   myCheckHit()     // checks for all collisions
 }" >
 
- <h1 align=center><font color=red>Run by Aya</font></h1>
+ <h1 align=center><font color=red>Level 1 by Aya</font></h1>
     
     
     <script>
-    
-       // global variables here
-       let myGlobalX = 0
-       let myClock
-       let myTimer01
-       let myTimer02
-    
-    
-       // global functions here
-    function myHitOther(my1,my2){
-       left1   = parseInt(document.getElementById(my1).style.left)
-       right1  = left1 + parseInt(document.getElementById(my1).style.width)
-       top1    = parseInt(document.getElementById(my1).style.top)   
-       bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
-       left2   = parseInt(document.getElementById(my2).style.left)
-       right2  = left2 + parseInt(document.getElementById(my2).style.width)
-       top2    = parseInt(document.getElementById(my2).style.top)   
-       bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
-       if ((right1  >=  left2  ) &&      	   
-           (bottom1 >=  top2   ) &&
-           (left1   <=  right2 ) &&
-           (top1    <=  bottom2) ){
-           return true
-       }
-    }
-    
-    
+      function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
     function myCheckHit(){
     
       var img1 = document.getElementById("myImg01");
@@ -65,72 +55,20 @@
             img1x + img1w > img2x &&
             img1y < img2y + img2h &&
             img1y + img1h > img2y) {
-          // Reset the position of img1
-          img1.style.left = "10px";
-        }
-      }
-      setInterval(myCheckHit, 10);
-       
-       if ( myHitOther('myImg01','myImg03') ){
-           //alert('you lose')
-          document.getElementById('myImg01').style.left = '10px'
-       }   
-
-       if ( myHitOther('myImg01','myImg05') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.top = '20px'
-       }   
-
-       if ( myHitOther('myImg01','myImg06') ){
-       //alert('you lose')
-      document.getElementById('myImg01').style.top = '632px'
-       }   
-       
-    
-    
-       // YOU WIN and go to next level!
-    
-       if ( myHitOther('myImg01','myImg04') ){
+          img1.style.left = "10px"; }
+           if ( myHitOther('myImg01','myImg04') ){
            alert('You Win, now go to the next level')
           document.getElementById('myImg01').style.left = '10px'
           location = 'https://www.google.ca'
        }
-    
-       // more if statements here
-
-       if( parseInt(document.getElementById('myImg01').style.left) > window.innerWidth - document.getElementById('myImg01').width ){
-         document.getElementById('myImg01').style.left = '10px'
-       }
-
-       if( parseInt(document.getElementById('myImg02').style.left) > window.innerWidth - document.getElementById('myImg02').width ){
-         document.getElementById('myImg02').style.left = (window.innerWidth / 2) + 'px'
-       }
-    
-    
-    
+        }
+      setInterval(myCheckHit, 10);
     </script>
     
     
-    
-    
-    <input type=button value="Auto Background Left" onclick="{
-      clearInterval(myClock)
-      let myTemp = '100px 0px'
-      myClock = setInterval(function(){
-          myGlobalX -= 5
-          myTemp =  myGlobalX + 'px 0px'
-          document.getElementById('myBody').style.backgroundPosition = myTemp
-      }, 100)
-        
-    }">
-    
-    
-    
-    <img id="myImg01" src="main character.JPG"  style="position:absolute; width:85px; height:80px; left: 50px; top:190px;">
-
-
     <html>
-      <head>
+    <img id="myImg01" src="main character.JPG"  style="position:absolute; width:85px; height:80px; left: 50px; top:190px;">
+    <img id="myImg04" src="https://static.vecteezy.com/system/resources/previews/009/354/918/original/treasure-chest-clipart-design-illustration-free-png.png"  style="position:absolute; width:100px; height:80px; left:800px; top:400px;">
       <style>
         #myImg02 { 
           width: 80px;
@@ -148,14 +86,8 @@
           100%  {background-color:red; left:200px; top:400px;}
         }
       </style>
-      </head>
-
 
       <body>
       <div id="myImg02"></div>
       </body>
       </html>
-    <img id="myImg03" src="bad guy.JPG"  style="position:absolute; width:85px; height:80px; left:450px; top:110px;">
-    <img id="myImg04" src="https://static.vecteezy.com/system/resources/previews/009/354/918/original/treasure-chest-clipart-design-illustration-free-png.png"  style="position:absolute; width:100px; height:80px; left:800px; top:400px;">
-    <img id="myImg05" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" style="position:absolute; width:2000px; height:8px;  left:-0px; top:732px;">
-    <img id="myImg06" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/A_black_image.jpg/640px-A_black_image.jpg" style="position:absolute; width:2000px; height:8px;  left:-0px; top:0.5px;">
