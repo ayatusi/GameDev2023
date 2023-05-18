@@ -1,4 +1,4 @@
-<title> Level 1 by Aya </title>
+
 <body id="myBody" style="background-repeat:repeat; background-size: 80%" background="background.jpg" 
    onkeydown="{
    if (event.key == 'd') {  // d = go right
@@ -17,7 +17,7 @@
   myCheckHit()     // checks for all collisions
 }" >
 
- <h1 align=center><font color="red">Level 1 by Aya</font></h1>
+ <h1 align=center><font color="red">Level 1 </font></h1>
  <p style="font-size:20px; font-family:'futura-bold'" align="left"><font color=white>Do not run into the red.<br>
 Collect the treasure to win.</font></p>   
     
@@ -47,6 +47,7 @@ Collect the treasure to win.</font></p>
         var img1y = img1.offsetTop;
         var img2x = img2.offsetLeft;
         var img2y = img2.offsetTop;
+        
         var img1w = img1.offsetWidth;
         var img1h = img1.offsetHeight;
         var img2w = img2.offsetWidth;
@@ -60,7 +61,7 @@ Collect the treasure to win.</font></p>
            if ( myHitOther('myImg01','myImg04') ){
            alert('You Win, now go to the next level')
           document.getElementById('myImg01').style.left = '10px'
-          location = 'https://www.google.ca'
+          location = 'level 2.html'
        }
         }
       setInterval(myCheckHit, 10);
@@ -83,8 +84,8 @@ Collect the treasure to win.</font></p>
         }
       
         @keyframes example {
-          0%   {background-color: red; left:200px; top:0px;}
-          100%  {background-color:red; left:200px; top:400px;}
+          0%   {background-color: red; left:400px; top:0px;}
+          100%  {background-color:red; left:200px; top:500px;}
         }
       </style>
 
