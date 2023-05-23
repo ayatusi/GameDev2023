@@ -46,18 +46,23 @@
       var img1 = document.getElementById("myImg01");
         var img2 = document.getElementById("myImg02");
         var img3 = document.getElementById("myImg03");
+        var img6 = document.getElementById("myImg06");
         var img1x = img1.offsetLeft;
         var img1y = img1.offsetTop;
         var img2x = img2.offsetLeft;
         var img2y = img2.offsetTop;
         var img3x = img3.offsetLeft;
         var img3y = img3.offsetTop;
+        var img6x = img6.offsetLeft;
+        var img6y = img6.offsetTop;
         var img1w = img1.offsetWidth;
         var img1h = img1.offsetHeight;
         var img2w = img2.offsetWidth;
         var img2h = img2.offsetHeight;
         var img3w = img3.offsetWidth;
         var img3h = img3.offsetHeight;
+        var img6w = img6.offsetWidth;
+        var img6h = img6.offsetHeight;
       
         if (img1x < img2x + img2w &&
             img1x + img1w > img2x &&
@@ -70,6 +75,12 @@
             img1x + img1w > img3x &&
             img1y < img3y + img3h &&
             img1y + img1h > img3y) {
+          img1.style.left = "10px"; }
+        
+        if (img1x < img6x + img6w &&
+            img1x + img1w > img6x &&
+            img1y < img6y + img6h &&
+            img1y + img1h > img6y) {
           img1.style.left = "10px"; }
          
 
@@ -115,7 +126,7 @@
   <body>
   <div id="myImg03"></div>
   </body>
-  </html>
+
       <style>
         #myImg02 { 
           width: 80px;
@@ -137,5 +148,30 @@
       <body>
       <div id="myImg02"></div>
       </body>
+
+  <style>
+        #myImg06 { 
+          width: 80px;
+          height: 80px;
+          background-color: red;
+          position: relative;
+          animation-name: myimg06;
+          animation-duration: 3s;
+          animation-iteration-count: infinite;
+          animation-direction: alternate;  
+        }
+      
+        @keyframes myimg06 {
+          0%   {background-color: red; left:1300px; top:0px;}
+          25%  {background-color:red; left:1100px; top:0px;}
+          50%  {background-color:red; left:1100px; top:380px;}
+          75%   {background-color:red; left:1300px; top:380px;}
+          100%  {background-color:red; left:1300px; top:0px;}
+        }
+  </style>
+
+      <body>
+      <div id="myImg06"></div>
+      </body>
+
       </html>
-      <br>
