@@ -1,0 +1,47 @@
+<title>Save The Queen!</title>
+<body id="myBody" style="background-repeat:repeat; background-size: 80%" background="background.jpg" 
+   onkeydown="{
+   if (event.key == 'd') {  // d = go right
+     document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
+   }   
+
+  myCheckHit()     // checks for all collisions
+}" >
+
+ <h1 align=center><font color="red">Congratulations on Saving the Queen.</font></h1>
+ <p style="font-size:20px; font-family:'futura-bold'" align="left"><font color=white>
+</font></p>   
+    
+    <script>
+      function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+    function myCheckHit(){
+
+           if ( myHitOther('myImg01','myImg06') ){
+          location = 'level 2.html'
+       }
+        }
+      setInterval(myCheckHit, 10);
+    </script>
+    
+    
+    <html>
+    <img id="myImg01" src="main character.JPG"  style="position:absolute; width:85px; height:80px; left: 50px; top:460px;">
+    <img id="myImg04" src="queen.JPG"  style="position:absolute; width:85px; height:80px; left:1000px; top:460px;">
+    <img id="myImg05" src="crown.png"  style="position:absolute; width:120px; height:100px; left:983px; top:385px;">
+    <img id="myImg06" src="queen.JPG"  style="position:absolute; width:85px; height:80px; left:750px; top:460px;">
