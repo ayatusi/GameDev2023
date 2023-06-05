@@ -1,13 +1,22 @@
-<h1 align=center>t2a12 Sort by Fred</h1>
+<title>Sort by Aya</title>
+<head>
+    <style>
+      body {
+        background-color: #b3b3cc;
+      }
+    </style>
+  </head>
+
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Sort by Aya</h1></p></font><br>
 
 <script>
-   let myMax = 3      // 52 when working
+   let myMax = 6     // 52 when working
    let myCards = new Array(myMax)  
 </script>
 
 <input type=button value="Set Random" onclick="{
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
-     myCards[myLoop] = Math.floor(Math.random()*10)
+     myCards[myLoop] = Math.floor(Math.random()*20)
   }
 }">
 
@@ -19,13 +28,60 @@
    document.getElementById('myDiv01').innerHTML = myTemp
 }">
 
-<input type=button value="Sort" onclick="{
-  let myTemp = 0
-  for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
-     myCards[myLoop] = 0 // you do this stuff
-  }
-}">
+<input type="button" value="Sort" onclick="{
+    myCards.sort(function(a, b) {
+      return a - b;
+    });
+    let myTemp = '';
+    for (let myLoop = 0; myLoop < myMax; myLoop++) {
+      myTemp += myLoop + ' = ' + myCards[myLoop] + '<br>';
+    }
+    document.getElementById('myDiv01').innerHTML = myTemp;
+  }">  
 
-<dir id="myDiv01"></div>
+<div id="myDiv01"></div>
+<br>
+<hr>
+<br>
+<script>
+function sortInputs() {
+    let input1 = parseInt(document.getElementById('input1').value);
+    let input2 = parseInt(document.getElementById('input2').value);
+    let input3 = parseInt(document.getElementById('input3').value);
+    
+    let inputs = [input1, input2, input3];
+    inputs.sort(function(a, b) {
+     return a - b;
+    });
+    
+    document.getElementById('input1').value = inputs[0];
+    document.getElementById('input2').value = inputs[1];
+    document.getElementById('input3').value = inputs[2];
+}
+</script>
+
+<script>
+    function sortInputs1() {
+        let input1 = parseInt(document.getElementById('input1').value);
+        let input2 = parseInt(document.getElementById('input2').value);
+        let input3 = parseInt(document.getElementById('input3').value);
+        
+        let inputs = [input1, input2, input3];
+        inputs.sort(function(b, a) {
+         return b - a;
+        });
+        
+        document.getElementById('input1').value = inputs[2];
+        document.getElementById('input2').value = inputs[1];
+        document.getElementById('input3').value = inputs[0];
+    }
+    </script>
 
 
+<input type="number" max="10" min="0" id="input1">
+<input type="number" max="10" min="0" id="input2">
+<input type="number" max="10" min="0" id="input3"><br>
+<br>
+<input type="button" value="Sort from least to greatest" onclick="sortInputs()"> 
+<input type="button" value="Sort from greatest to least" onclick="sortInputs1()"><br>
+<hr>
