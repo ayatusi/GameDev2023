@@ -1,5 +1,13 @@
+<title>Local Storage by Aya</title>
 
-<h2>t2a09-local-storage-name by Fred. Instructions:</h2>
+<head>
+   <style>
+     body {
+       background-color: #b3b3cc;
+     }
+   </style>
+ </head> 
+<h1 align=center><p style="font-family: Arial"><p style="border-width:3px; border-style:solid; border-color:#FFFFFF; padding: 1em;"><font size="7">Local Storage by Aya</font></p></h1>
 
 <body onload="{
    myStorage = localStorage.getItem('myStoredText')
@@ -12,11 +20,11 @@
    localstorage.setItem('myStoredText',document.getElementById('myText1').value)
 }">   
 
-Text example: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
+Input your name: <input id="myText1" type=text size=70 value="" placeholder="Write here to store"><br>
 
 <input type="button" value="Store Text" onClick="{
    localStorage.setItem('myStoredText', document.getElementById('myText1').value)
-   alert(document.getElementById('myText1').value + ' \nHas been stored')
+   document.getElementById('myText1').value + ' \nHas been stored'
    document.getElementById('myText1').value = ''
 }">
 
@@ -24,3 +32,19 @@ Text example: <input id="myText1" type=text size=70 value="" placeholder="Write 
    document.getElementById('myText1').value = localStorage.getItem('myStoredText')
 }"> 
 
+   
+   
+<input type=button value="Click For Stored Greeting" onClick="{
+                                                       
+      
+  let myFirstName = localStorage.getItem('myStoredText')
+  
+                                                          
+   document.getElementById('myDiv03').innerHTML = '<br>Hello, ' + myFirstName + ' <br>'                                                      
+   
+}">
+
+<div id="myDiv03">...</div>
+   
+</body>
+</html>
