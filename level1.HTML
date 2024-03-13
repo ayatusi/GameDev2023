@@ -65,6 +65,45 @@
        }
         }
       setInterval(myCheckHit, 10);
+
+ function moveCharacter(dx, dy) {
+        var character = document.getElementById("myImg01");
+        var left = parseInt(character.style.left) || 0;
+        var top = parseInt(character.style.top) || 0;
+        var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        // Calculate new position
+        var newLeft = left + dx;
+        var newTop = top + dy;
+
+        // Check if the new position is within the window boundaries
+        if (newLeft >= 0 && newLeft + character.offsetWidth <= windowWidth) {
+            character.style.left = newLeft + 'px';
+        }
+
+        if (newTop >= 0 && newTop + character.offsetHeight <= windowHeight) {
+            character.style.top = newTop + 'px';
+        }
+    }
+
+    document.addEventListener('keydown', function(event) {
+        switch (event.key) {
+            case 'd':
+                moveCharacter(10, 0); // Move right
+                break;
+            case 'a':
+                moveCharacter(-10, 0); // Move left
+                break;
+            case 'w':
+                moveCharacter(0, -10); // Move up
+                break;
+            case 's':
+                moveCharacter(0, 10); // Move down
+                break;
+        }
+        myCheckHit(); // Check for collisions
+    });
     </script>
     
     
