@@ -1,0 +1,112 @@
+var character = document.getElementById("characterMain");
+var interval;
+var both = 0;
+var recentDirection = null; // Track recent movement direction
+
+var leftImage = new Image();
+leftImage.src = 'main guy move back.png';
+
+var rightImage = new Image();
+rightImage.src = 'Main guy move forward.png';
+
+var IdleRightImage = new Image();
+IdleRightImage.src = 'Main guy.png';
+
+var IdleLeftImage = new Image();
+IdleLeftImage.src = 'Main back.png';
+
+function jump() {
+    // Add jump animation class
+    character.classList.add("jump");
+
+    // Set timeout to remove jump animation class after animation ends
+    setTimeout(function() {
+        character.classList.remove("jump");
+    }, 500); // Adjust duration to match the jump animation duration
+}
+
+function changeCharacterImage(image) {
+    character.style.backgroundImage = "url('" + image.src + "')";
+}
+
+function moveLeft() {
+    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    if (left > 1 - 36) {
+        character.style.left = left - 1 + "px";
+        recentDirection = "left";
+        changeCharacterImage(leftImage);
+    }
+}
+
+function moveRight() {
+    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    if (left < 844) {
+        character.style.left = left + 1 + "px";
+        recentDirection = "right";
+        changeCharacterImage(rightImage);
+    }
+}
+
+function moveUp() {
+    var top = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    if (top > 1 - 30) {
+    
+    }
+}
+
+function moveDown() {
+    var top = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
+    if (top < 610) {
+       
+    }
+}
+
+function updateCharacterImage() {
+    if (recentDirection === "left") {
+        changeCharacterImage(leftImage);
+    } else if (recentDirection === "right") {
+        changeCharacterImage(rightImage);
+    } else {
+        if (characterIsFacingLeft()) {
+            changeCharacterImage(IdleLeftImage);
+        } else {
+            changeCharacterImage(IdleRightImage);
+        }
+    }
+}
+
+function characterIsFacingLeft() {
+    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    return recentDirection === "left";
+}
+function characterIsFacingRight() {
+    var left = parseInt(window.getComputedStyle(character).getPropertyValue("left"));
+    return recentDirection === "right";
+}
+
+document.addEventListener("keydown", event => {
+    if (both == 0) {
+        both++;
+        if (event.key === "ArrowLeft") {
+            interval = setInterval(moveLeft, 1);
+        }
+        if (event.key === "ArrowRight") {
+            interval = setInterval(moveRight, 1);
+        }
+        if (event.key === "ArrowUp") {
+            jump();
+        }
+    }
+});
+
+document.addEventListener("keyup", _event => {
+    clearInterval(interval);
+    both = 0;
+    recentDirection = null;
+});
+
+function gameLoop() {
+    updateCharacterImage();
+}
+
+setInterval(gameLoop, 1000 / 60);
