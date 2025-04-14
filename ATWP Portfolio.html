@@ -97,6 +97,24 @@ a {
   margin: 3em auto;
 }
 
+.top-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #eee;
+  border: 1px solid #aaa;
+  padding: 0.5em 1em;
+  font-family: "Times New Roman", serif;
+  font-size: 0.9em;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.top-button:hover {
+  opacity: 1;
+}
+
 .assignment-content {
   max-width: 800px;
   font-family: "Times New Roman", Times, serif;
@@ -288,6 +306,14 @@ html {
     <div class="decorative-top">
         ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀
       </div>
+
+      <button onclick="scrollToTop()" class="top-button">↑ Back to Top</button>
+
+      <script>
+        function scrollToTop() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      </script>
 
   </body>
 </html>
