@@ -175,33 +175,45 @@ a {
 .references li {
   margin-bottom: 0.8em;
 }
+
+.sticky-toc {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: transparent; /* invisible background */
+  backdrop-filter: blur(2px); /* optional subtle blur */
+  padding: 0.3em 0;
+  border-bottom: none;
+  box-shadow: none;
+}
+
 .toc-clean {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-  margin: 2em 0;
+  font-size: 1.05em;
+  opacity: 0.8;
 }
 
 .toc-clean h3 {
-  font-size: 1.4em;
-  text-decoration: underline;
-  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+  color: #4b3832;
+  opacity: 0.7;
 }
 
-.toc-clean nav {
-  font-size: 1.1em;
-  color: #333;
-}
-
-.toc-clean a {
+.toc-clean nav a {
   text-decoration: none;
-  color: #444;
+  color: #4b3832;
   margin: 0 0.5em;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  opacity: 0.7;
 }
 
-.toc-clean a:hover {
+.toc-clean nav a:hover {
+  opacity: 1;
   text-decoration: underline;
-  color: #666;
 }
 
 html {
@@ -210,12 +222,23 @@ html {
         </style>
       </head>
       <body>
-
         <script>
             window.onload = function() {
               window.scrollTo(0, 0);
             };
           </script>
+
+        <div class="sticky-toc">
+            <div class="toc-clean">
+              <h3>Table of Contents</h3>
+              <nav>
+                <a href="#intro">Introduction</a> · 
+                <a href="#assignments">Assignments</a> · 
+                <a href="#references">References</a> · 
+                <a href="#conclusion">Conclusion</a>
+              </nav>
+            </div>
+          </div>
 
         <div class="header-bar">
           <div class="left-header">
@@ -229,19 +252,14 @@ html {
         </div>
 
         <div class="decorative-top">
-            ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀</div>
+            ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀
+        </div>
+
+
+
     <div class="portfolio-title">ATWP135 Portfolio</div>
 
 
-<div class="toc-clean">
-  <h3>Table of Contents</h3>
-  <nav>
-    <a href="#intro">Introduction</a> · 
-    <a href="#assignments">Assignments</a> · 
-    <a href="#conclusion">Conclusion</a> · 
-    <a href="#references">References</a>
-  </nav>
-</div>
 
     <div class="intro" id="intro">
         <h2>Introduction</h2>
