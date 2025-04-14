@@ -11,12 +11,34 @@
   letter-spacing: 0.2em;
   font-family: "Times New Roman", Times, serif;
 }
-          body {
-            background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-            background-color: #FEFEFA;
-            font-family: "Times New Roman", Times, serif;
-            margin: 2em;
-          }
+
+body {
+  background: linear-gradient(to bottom right, #fefcf8, #f3f0eb);
+  font-family: "Times New Roman", Times, serif;
+  margin: 2em;
+}
+
+h2, h3 {
+  color: #4e3b31; /* soft espresso brown */
+}
+
+.portfolio-title {
+  color: #3c2f2f;
+}
+
+a {
+  color: #4b3832;
+}
+
+.intro p,
+.conclusion p,
+.references li {
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+
+
 
           .header-bar {
             display: flex;
@@ -88,17 +110,26 @@
 .assignment-content a {
   display: inline-block;
   padding: 0.5em 1.2em;
-  background-color: #f2f2f2;
-  color: #000;
-  border: 1px solid #aaa;
-  text-decoration: none;
+  background-color: #f5eee6;
+  color: #3b3b3b;
+  border: 1px solid #c9b7aa;
+  border-radius: 6px;
   font-weight: bold;
-  font-size: 1em;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
 
 .assignment-content a:hover {
-  background-color: #ddd;
+  background-color: #e4dbd3;
+  color: #000;
+}
+
+.assignment-content h3 {
+  font-size: 1.2em;
+  color: #4e3b31;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+  margin-top: 2em;
 }
 
 .assignments {
@@ -126,6 +157,34 @@
 .references li {
   margin-bottom: 0.8em;
 }
+.toc-clean {
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  margin: 2em 0;
+}
+
+.toc-clean h3 {
+  font-size: 1.4em;
+  text-decoration: underline;
+  margin-bottom: 0.5em;
+}
+
+.toc-clean nav {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.toc-clean a {
+  text-decoration: none;
+  color: #444;
+  margin: 0 0.5em;
+  transition: color 0.2s ease;
+}
+
+.toc-clean a:hover {
+  text-decoration: underline;
+  color: #666;
+}
 
 html {
   scroll-behavior: smooth;
@@ -133,7 +192,13 @@ html {
         </style>
       </head>
       <body>
-    
+
+        <script>
+            window.onload = function() {
+              window.scrollTo(0, 0);
+            };
+          </script>
+
         <div class="header-bar">
           <div class="left-header">
             <p>AYA TUSI V01064912</p>
@@ -149,7 +214,18 @@ html {
             ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀ ❀</div>
     <div class="portfolio-title">ATWP135 Portfolio</div>
 
-    <div class="intro">
+
+<div class="toc-clean">
+  <h3>Table of Contents</h3>
+  <nav>
+    <a href="#intro">Introduction</a> · 
+    <a href="#assignments">Assignments</a> · 
+    <a href="#conclusion">Conclusion</a> · 
+    <a href="#references">References</a>
+  </nav>
+</div>
+
+    <div class="intro" id="intro">
         <h2>Introduction</h2>
       <p>When I began ATWP135 I didn’t think of myself as a strong or confident writer. In my first assignment, the Personal Literacy Statement, I wrote that writing felt like a sprint, and that I’d often struggle to choose a side in argumentative writing. I described how writing drained my energy and made me feel uncreative. Now, as I look back at the work in this portfolio, I see a clear positive shift in how I understand and approach writing. This portfolio won’t show a perfect writer or a huge transformation, what it will show is how I've grown from writing with uncertainty into someone who can organize ideas, back up claims with sources and navigate the writing process confidently. The four assignments I’ve included reflect that growth.</p>
 
@@ -175,7 +251,7 @@ html {
           <a href="Academic Summary - Weed Free January.pdf" target="_blank">View PDF</a>
       
           <h3>Persuading Skeptics (Feb 16)</h3>
-          <a href="Pursuading Skeptics.pdf" target="_blank">View PDF</a>
+          <a href="Persuading Skeptics.pdf" target="_blank">View PDF</a>
       
           <h3>Peer Review and Draft Intro (Mar 17)</h3>
           <a href="Peer review and Draft Intro.pdf" target="_blank">View PDF</a>
@@ -184,7 +260,7 @@ html {
       
 
 
-    <div class="conclusion">
+    <div class="conclusion" id="conclusion">
         <h2>Conclusion</h2>
         <p>Finishing this portfolio has helped me look at my writing from a new perspective. Instead of focusing on whether something is “good” or “bad”, I’ve started looking at how my writing functions, how it flows and how it connects to its purpose, which is probably the most valuable thing I’ll take with me from ATWP135. It has made writing feel less like a wall I have to climb and more like something I can build step by step.</p>
 
